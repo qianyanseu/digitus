@@ -1,0 +1,33 @@
+{{!< default}}
+{{> header}}
+
+<main class="wrapper_digitus" role="main">
+    
+    <h3>Table of contents</h3>
+    
+	{{#foreach posts}}
+    
+		<article class="article_digitus">
+            
+            <span class="posttitle_digitus">
+                <h2><a href="{{{url}}}" rel="bookmark">
+				    {{title}}
+                    </a>
+                </h2>
+                <span class="tooltip_digitus">
+                    <p><i class="fa fa-calendar"></i>
+                    <time>
+                        {{date published_at timeago="true"}}
+                    </time></p>
+                </span>
+           </span> 	
+		</article>
+	
+	{{/foreach}}
+
+	{{#if pagination}}
+        {{{pagination}}}
+	{{/if}}
+
+</main>
+{{> footer}}
